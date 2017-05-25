@@ -101,6 +101,12 @@
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                             text:(NSString *)text;
+
+- (instancetype)initWithSenderId:(NSString *)senderId
+               senderDisplayName:(NSString *)senderDisplayName
+                            date:(NSDate *)date
+                            text:(NSString *)text
+                       isPreview:(BOOL)isPreview;
 /**
  *  Initializes and returns a message object having the given senderId, displayName, media,
  *  and current system date.

@@ -47,6 +47,16 @@
     return self;
 }
 
+- (instancetype)initWithSenderId:(NSString *)senderId
+               senderDisplayName:(NSString *)senderDisplayName
+                            date:(NSDate *)date
+                            text:(NSString *)text
+                       isPreview:(BOOL)isPreview
+{
+    _isPreview = isPreview;
+    return [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date text:text];
+}
+
 + (instancetype)messageWithSenderId:(NSString *)senderId
                         displayName:(NSString *)displayName
                               media:(id<JSQMessageMediaData>)media
