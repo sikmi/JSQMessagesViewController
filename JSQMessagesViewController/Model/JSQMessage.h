@@ -52,7 +52,7 @@
 @property (assign, nonatomic, readonly) BOOL isMediaMessage;
 
 // ハイパーリンクのプレビューかどうか判断
-@property (assign, nonatomic, readonly) BOOL isPreviewMessage;
+@property (assign, nonatomic, readonly) long previewCount;
 
 /**
  *  Returns the body text of the message, or `nil` if the message is a media message.
@@ -106,7 +106,7 @@
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                             text:(NSString *)text
-                       isPreviewMessage:(BOOL)isPreviewMessage;
+                    previewCount:(long)previewCount;
 /**
  *  Initializes and returns a message object having the given senderId, displayName, media,
  *  and current system date.

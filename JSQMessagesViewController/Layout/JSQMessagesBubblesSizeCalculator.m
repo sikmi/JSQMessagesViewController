@@ -133,8 +133,8 @@
         //  same as above, an extra 2 points of magix
         CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
         
-        if ([messageData isPreviewMessage]) {
-            finalSize = CGSizeMake(maximumTextWidth, stringSize.height + verticalInsets + 120);
+        if ([messageData previewCount] >= 1) {
+            finalSize = CGSizeMake(maximumTextWidth, stringSize.height + verticalInsets + (120 * [messageData previewCount]));
         } else {
             finalSize = CGSizeMake(finalWidth, stringSize.height + verticalInsets);
         }

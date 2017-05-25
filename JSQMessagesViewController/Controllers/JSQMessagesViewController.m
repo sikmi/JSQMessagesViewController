@@ -551,8 +551,8 @@ JSQMessagesKeyboardControllerDelegate>
         cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
     }
     else {
-        BOOL isPreviewMessage = [messageItem isPreviewMessage];
-        if (isPreviewMessage) {
+        BOOL previewCount = [messageItem previewCount] >= 1;
+        if (previewCount) {
             cellIdentifier = isOutgoingMessage ? self.outgoingPreviewCellIdentifier : self.incomingPreviewCellIdentifier;
         } else {
             cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
