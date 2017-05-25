@@ -550,7 +550,7 @@ JSQMessagesKeyboardControllerDelegate>
         cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
     }
     else {
-        NSLog(@"this is text message");
+        
         cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
     }
 
