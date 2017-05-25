@@ -51,7 +51,7 @@
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                             text:(NSString *)text
-                       isPreview:(BOOL)isPreviewMessage
+                       isPreviewMessage:(BOOL)isPreviewMessage
 {
     self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date text:text];
     if (self) {
