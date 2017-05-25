@@ -111,7 +111,7 @@
  */
 @property (copy, nonatomic) NSString *outgoingMediaCellIdentifier;
 
-// 相手の吹き出し(プレビュー)
+// 自分の吹き出し(プレビュー)
 @property (copy, nonatomic) NSString *outgoingPreviewCellIdentifier;
 
 /**
