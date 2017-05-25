@@ -53,8 +53,11 @@
                             text:(NSString *)text
                        isPreview:(BOOL)isPreview
 {
-    _isPreview = isPreview;
-    return [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date text:text];
+    self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date text:text];
+    if (self) {
+        _isPreview = isPreview;
+    }
+    return self;
 }
 
 + (instancetype)messageWithSenderId:(NSString *)senderId
