@@ -551,8 +551,7 @@ JSQMessagesKeyboardControllerDelegate>
     else {
         BOOL isPreviewMessage = [messageItem isPreviewMessage];
         if (isPreviewMessage) {
-            NSLog(@"previewwwwwwww");
-            cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
+            cellIdentifier = isOutgoingMessage ? self.outgoingPreviewCellIdentifier : self.outgoingPreviewCellIdentifier;
         } else {
             cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
         }
