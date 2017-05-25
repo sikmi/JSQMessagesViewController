@@ -546,7 +546,7 @@ JSQMessagesKeyboardControllerDelegate>
 
     NSString *cellIdentifier = nil;
     if (isMediaMessage) {
-        NSLog(@"this is media message");
+        
         cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
     }
     else {
