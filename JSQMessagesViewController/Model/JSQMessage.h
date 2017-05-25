@@ -51,6 +51,9 @@
  */
 @property (assign, nonatomic, readonly) BOOL isMediaMessage;
 
+// ハイパーリンクのプレビューかどうか判断
+@property (nonatomic) BOOL isPreview;
+
 /**
  *  Returns the body text of the message, or `nil` if the message is a media message.
  *  That is, if `isMediaMessage` is equal to `YES` then this value will be `nil`.

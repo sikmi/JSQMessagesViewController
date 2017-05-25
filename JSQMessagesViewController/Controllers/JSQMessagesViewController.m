@@ -546,12 +546,17 @@ JSQMessagesKeyboardControllerDelegate>
 
     NSString *cellIdentifier = nil;
     if (isMediaMessage) {
-        
         cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
     }
     else {
+        BOOL isPreview = [messageItem isPreviewMessage];
+        if (isPreview) {
+            NSLog(@"previewwwwwwww");
+            cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
+        } else {
+            cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
+        }
         
-        cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
     }
 
     JSQMessagesCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
