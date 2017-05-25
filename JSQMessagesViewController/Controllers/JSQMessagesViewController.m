@@ -549,8 +549,8 @@ JSQMessagesKeyboardControllerDelegate>
         cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
     }
     else {
-        BOOL isPreview = [messageItem isPreviewMessage];
-        if (isPreview) {
+        BOOL isPreviewMessage = [messageItem isPreviewMessage];
+        if (isPreviewMessage) {
             NSLog(@"previewwwwwwww");
             cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
         } else {

@@ -51,11 +51,11 @@
                senderDisplayName:(NSString *)senderDisplayName
                             date:(NSDate *)date
                             text:(NSString *)text
-                       isPreview:(BOOL)isPreview
+                       isPreview:(BOOL)isPreviewMessage
 {
     self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date text:text];
     if (self) {
-        _isPreview = isPreview;
+        _isPreviewMessage = isPreviewMessage;
     }
     return self;
 }
@@ -142,8 +142,8 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@: senderId=%@, senderDisplayName=%@, date=%@, isMediaMessage=%@, text=%@, media=%@>",
-            [self class], self.senderId, self.senderDisplayName, self.date, @(self.isMediaMessage), self.text, self.media];
+    return [NSString stringWithFormat:@"<%@: senderId=%@, senderDisplayName=%@, date=%@, isMediaMessage=%@, text=%@, media=%@, isPreviewMessage=%@>",
+            [self class], self.senderId, self.senderDisplayName, self.date, @(self.isMediaMessage), self.text, self.media, @(self.isPreviewMessage)];
 }
 
 - (id)debugQuickLookObject
@@ -161,7 +161,7 @@
         _senderDisplayName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(senderDisplayName))];
         _date = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(date))];
         _isMediaMessage = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isMediaMessage))];
-        _isPreview = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isPreviewMessage))];
+        _isPreviewMessage = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isPreviewMessage))];
         _text = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(text))];
         _media = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(media))];
     }
@@ -174,7 +174,7 @@
     [aCoder encodeObject:self.senderDisplayName forKey:NSStringFromSelector(@selector(senderDisplayName))];
     [aCoder encodeObject:self.date forKey:NSStringFromSelector(@selector(date))];
     [aCoder encodeBool:self.isMediaMessage forKey:NSStringFromSelector(@selector(isMediaMessage))];
-    [aCoder encodeBool:self.isPreview forKey:NSStringFromSelector(@selector(isPreview))];
+    [aCoder encodeBool:self.isPreviewMessage forKey:NSStringFromSelector(@selector(isPreviewMessage))];
     [aCoder encodeObject:self.text forKey:NSStringFromSelector(@selector(text))];
 
     if ([self.media conformsToProtocol:@protocol(NSCoding)]) {
