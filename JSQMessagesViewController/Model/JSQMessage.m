@@ -148,6 +148,7 @@
         _senderDisplayName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(senderDisplayName))];
         _date = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(date))];
         _isMediaMessage = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isMediaMessage))];
+        _isPreview = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(isPreviewMessage))];
         _text = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(text))];
         _media = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(media))];
     }
@@ -160,6 +161,7 @@
     [aCoder encodeObject:self.senderDisplayName forKey:NSStringFromSelector(@selector(senderDisplayName))];
     [aCoder encodeObject:self.date forKey:NSStringFromSelector(@selector(date))];
     [aCoder encodeBool:self.isMediaMessage forKey:NSStringFromSelector(@selector(isMediaMessage))];
+    [aCoder encodeBool:self.isPreview forKey:NSStringFromSelector(@selector(isPreview))];
     [aCoder encodeObject:self.text forKey:NSStringFromSelector(@selector(text))];
 
     if ([self.media conformsToProtocol:@protocol(NSCoding)]) {
