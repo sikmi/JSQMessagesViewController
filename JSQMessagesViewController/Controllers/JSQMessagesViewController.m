@@ -189,9 +189,11 @@ JSQMessagesKeyboardControllerDelegate>
 
     self.outgoingCellIdentifier = [JSQMessagesCollectionViewCellOutgoing cellReuseIdentifier];
     self.outgoingMediaCellIdentifier = [JSQMessagesCollectionViewCellOutgoing mediaCellReuseIdentifier];
+    self.outgoingPreviewCellIdentifier = [JSQMessagesCollectionViewCellOutgoing previewCellReuseIdentifier];
 
     self.incomingCellIdentifier = [JSQMessagesCollectionViewCellIncoming cellReuseIdentifier];
     self.incomingMediaCellIdentifier = [JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier];
+    self.incomingPreviewCellIdentifier = [JSQMessagesCollectionViewCellIncoming previewCellReuseIdentifier];
 
     // NOTE: let this behavior be opt-in for now
     // [JSQMessagesCollectionViewCell registerMenuAction:@selector(delete:)];

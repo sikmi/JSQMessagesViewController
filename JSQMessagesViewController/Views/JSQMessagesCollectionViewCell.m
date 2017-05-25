@@ -96,6 +96,11 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     return [NSString stringWithFormat:@"%@_JSQMedia", NSStringFromClass([self class])];
 }
 
++ (NSString *)previewCellReuseIdentifier
+{
+    return [NSString stringWithFormat:@"%@_JSQPreview", NSStringFromClass([self class])];
+}
+
 + (void)registerMenuAction:(SEL)action
 {
     [jsqMessagesCollectionViewCellActions addObject:NSStringFromSelector(action)];

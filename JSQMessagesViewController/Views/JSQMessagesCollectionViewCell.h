@@ -191,6 +191,9 @@
  */
 + (NSString *)mediaCellReuseIdentifier;
 
+// プレビュー用Identifier
++ (NSString *)previewCellReuseIdentifier;
+
 /**
  *  Registers an action to be available in the cell's menu.
  *
