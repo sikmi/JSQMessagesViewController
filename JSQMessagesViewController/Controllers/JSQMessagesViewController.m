@@ -506,9 +506,11 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 
     NSString *cellIdentifier = nil;
     if (isMediaMessage) {
+        NSLog(@"this is mediaMessage");
         cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
     }
     else {
+        NSLog(@"this is textMessage");
         cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
     }
 
