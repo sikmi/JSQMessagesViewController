@@ -553,7 +553,7 @@ JSQMessagesKeyboardControllerDelegate>
     else {
         BOOL isPreviewMessage = [messageItem isPreviewMessage];
         if (isPreviewMessage) {
-            cellIdentifier = isOutgoingMessage ? self.outgoingPreviewCellIdentifier : self.outgoingPreviewCellIdentifier;
+            cellIdentifier = isOutgoingMessage ? self.outgoingPreviewCellIdentifier : self.incomingPreviewCellIdentifier;
         } else {
             cellIdentifier = isOutgoingMessage ? self.outgoingCellIdentifier : self.incomingCellIdentifier;
         }
