@@ -134,7 +134,8 @@
         CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
         
         if ([messageData previewCount] >= 1) {
-            finalSize = CGSizeMake(maximumTextWidth, stringSize.height + verticalInsets + (120 * [messageData previewCount]));
+            CGFloat bubbleWidth = maximumTextWidth < finalWidth ? finalWidth : maximumTextWidth;
+            finalSize = CGSizeMake(bubbleWidth, stringSize.height + verticalInsets + (120 * [messageData previewCount]));
         } else {
             finalSize = CGSizeMake(finalWidth, stringSize.height + verticalInsets);
         }
