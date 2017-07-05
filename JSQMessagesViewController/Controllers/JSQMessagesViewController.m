@@ -1023,7 +1023,7 @@ JSQMessagesKeyboardControllerDelegate>
 
 - (void)jsq_adjustInputToolbarHeightConstraintByDelta:(CGFloat)dy
 {
-    CGFloat proposedHeight = self.toolbarHeightConstraint.constant + dy;
+    CGFloat proposedHeight = self.inputToolbar.contentView.textView.contentSize.height + dy;
 
     CGFloat finalHeight = MAX(proposedHeight, self.inputToolbar.preferredDefaultHeight);
 
