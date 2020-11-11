@@ -99,9 +99,15 @@
 
 - (UIImage *)jsq_horizontallyFlippedImageFromImage:(UIImage *)image
 {
-    return [UIImage imageWithCGImage:image.CGImage
-                               scale:image.scale
-                         orientation:UIImageOrientationUpMirrored];
+    CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextRotateCTM(ctx, M_PI);
+    CGContextTranslateCTM(ctx, -rect.size.width, -rect.size.height);
+    CGContextDrawImage(ctx, rect, image.CGImage);
+    UIImage *i = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return i;
 }
 
 - (UIImage *)jsq_stretchableImageFromImage:(UIImage *)image withCapInsets:(UIEdgeInsets)capInsets
